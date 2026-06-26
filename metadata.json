@@ -1,0 +1,6 @@
+{
+  "name": "Armory AI Platform",
+  "description": "Premium SaaS landing page for Armory, an advanced AI-driven data automation platform featuring a bento-grid to accordion showcase and an isolated-rendering currency switcher.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

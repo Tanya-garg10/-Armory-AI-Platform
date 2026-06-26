@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-forsythia: #FFC801;
+  --color-brand-arctic: #f8fafc;
+  --color-brand-nocturnal: #114C5A;
+  --color-brand-mint: #D9E8E2;
+  --color-brand-saffron: #FF9932;
+  --color-brand-oceanic: #0a0a0a;
+}
+
+/* Base resets & styles */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-oceanic);
+  color: var(--color-brand-arctic);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Motion & Transition constraints */
+:root {
+  --transition-micro: 200ms cubic-bezier(0.0, 0.0, 0.2, 1); /* ease-out */
+  --transition-layout: 400ms cubic-bezier(0.4, 0.0, 0.2, 1); /* ease-in-out */
+}
+
+.transition-micro {
+  transition: all var(--transition-micro);
+}
+
+.transition-layout {
+  transition: all var(--transition-layout);
+}
+
+/* Custom animation classes */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* Accordion Specific CSS (For Feature 2) */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-layout);
+}
+.accordion-content[data-state="open"] {
+  grid-template-rows: 1fr;
+}
+.accordion-inner {
+  overflow: hidden;
+}
